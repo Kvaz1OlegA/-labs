@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.592,C:\Documents\Embarcadero\Studio\Projects\Unit1.h=E:\university\progs\C++\2 sem\lab5\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.870,C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj=E:\university\progs\C++\2 sem\lab5\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.336,=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.576,C:\Documents\Embarcadero\Studio\Projects\Unit3.h=E:\university\progs\C++\2 sem\lab5\Queue.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.576,C:\Documents\Embarcadero\Studio\Projects\Unit3.cpp=E:\university\progs\C++\2 sem\lab5\Queue.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.566,=C:\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.379,C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp=E:\university\progs\C++\2 sem\lab5\List.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.592,C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp=E:\university\progs\C++\2 sem\lab5\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.592,C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\university\progs\C++\2 sem\lab5\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.379,C:\Documents\Embarcadero\Studio\Projects\Unit2.h=E:\university\progs\C++\2 sem\lab5\List.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.770,C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=E:\university\progs\C++\2 sem\lab5\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.095,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.276,=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="List.cpp"/>
+    <File Path="List.cpp"/>
+    <File Path="List.h"/>
+    <File Path="Project1.cpp"/>
+    <File Path="Project1PCH1.h"/>
+    <File Path="Queue.cpp"/>
+    <File Path="Queue.cpp"/>
+    <File Path="Queue.h"/>
+    <File Path="Unit1.cpp"/>
+    <File Path="Unit1.cpp"/>
+    <File Path="Unit1.dfm"/>
+    <File Path="Unit1.h"/>
+  </ProjectSortOrder>
+</BorlandProject>

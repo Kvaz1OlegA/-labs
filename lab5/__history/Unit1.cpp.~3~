@@ -1,0 +1,35 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "Queue.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+TForm1 *Form1;
+
+Queue<int> nums;
+
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	nums.Push(StrToInt(Edit1->Text));
+	ListBox1->Items->Add(IntToStr(nums.Back()));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	nums.Pop();
+	ListBox1->Items->Delete(0);
+}
+//---------------------------------------------------------------------------
+

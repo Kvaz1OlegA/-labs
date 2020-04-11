@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.307,E:\university\progs\C++\2 sem\lab4\Project1PCH1.h=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.608,E:\university\progs\C++\2 sem\lab4\Unit1.dfm=C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.137,=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.608,E:\university\progs\C++\2 sem\lab4\Unit1.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.613,E:\university\progs\C++\2 sem\lab4\Project1.cbproj=C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.608,E:\university\progs\C++\2 sem\lab4\Unit1.h=C:\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.602,E:\university\progs\C++\2 sem\lab4\Stack.h=C:\Documents\Embarcadero\Studio\Projects\Unit2.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.602,E:\university\progs\C++\2 sem\lab4\Stack.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.451,=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.248,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+  </Transactions>
+</BorlandProject>

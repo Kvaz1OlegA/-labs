@@ -1,0 +1,134 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include <string>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+#include "Stack.h"
+
+TForm1 *Form1;
+
+Stack <float> nums;
+
+Stack <char> operations;
+
+using namespace std;
+
+string temp;
+
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	AnsiString exeption = Edit1->Text;
+	for(int i=1; i<=exeption.Length();i++)
+	{
+		if((exeption[i]>=48 && exeption[i]<=57)||exeption[i]==46)
+		{
+			temp.push_back(exeption[i]);
+		}
+		else
+		{
+			if(i-1!=0&&(exeption[i-1]>=48 && exeption[i-1]<=57))
+			{
+				temp.push_back(124);
+			}
+			if(exeption[i]==41)
+			{
+				while(operations[0]!=40)
+				{
+					temp.push_back(operations[0]);
+					operations.PopFront();
+				}
+				operations.PopFront();
+				while(operations.GetSize()!=0)
+				{
+					temp.push_back(operations[0]);
+					operations.PopFront();
+				}
+			}
+			else if((exeption[i]==43||exeption[i]==45)&&(operations[0]==42||operations[0]==47))
+			{
+				while(operations[0]!=40||operations.GetSize()==0)
+				{
+					temp.push_back(operations[0]);
+					operations.PopFront();
+				}
+				operations.PushFront(exeption[i]);
+			}
+			else
+			{
+				operations.PushFront(exeption[i]);
+			}
+		}
+	}
+    if (temp[temp.size() - 1] >= 48 && temp[temp.size() - 1] <= 57)
+	{
+		temp.push_back(124);
+	}
+    while(operations.GetSize()!=0)
+	{
+		temp.push_back(operations[0]);
+		operations.PopFront();
+	}
+	Panel2->Caption="";
+	Panel2->Caption=temp.c_str();
+	int lenght=0;
+	string number;
+	float result;
+	for(int i=0; i<temp.size(); i++)
+	{
+		if(temp[i]>=48 && temp[i]<=57)
+		{
+			int k=i;
+			while(temp[i]!='|')
+			{
+				lenght++;
+				i++;
+			}
+			number=temp.substr(k,lenght);
+			nums.PushFront(atof(number.c_str()));
+		}
+		else
+		{
+			switch(temp[i])
+			{
+				case '+':
+					result = nums[1]+nums[0];
+					nums.PopFront();
+					nums.PopFront();
+					nums.PushFront(result);
+					break;
+				case '-':
+					result = nums[1]-nums[0];
+					nums.PopFront();
+					nums.PopFront();
+					nums.PushFront(result);
+					break;
+				case '*':
+					result = nums[1]*nums[0];
+					nums.PopFront();
+					nums.PopFront();
+					nums.PushFront(result);
+					break;
+				case '/':
+					result = nums[1]/nums[0];
+					nums.PopFront();
+					nums.PopFront();
+					nums.PushFront(result);
+					break;
+			}
+		}
+		lenght=0;
+	}
+	Panel1->Caption=FloatToStr(nums[0]);
+}
+//---------------------------------------------------------------------------
