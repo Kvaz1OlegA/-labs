@@ -1,0 +1,151 @@
+//---------------------------------------------------------------------------
+
+#ifndef TreeH
+#define TreeH
+
+using namespace std;
+
+struct TInf {
+
+int key;
+
+String fio;
+
+};
+//---------------------------------------------------------------------------
+struct TTree {
+
+TInf Inf;
+
+unsigned char height;
+
+TTree *A1;
+
+TTree *A2;
+
+TTree(int k, String filo) { Inf.key = k; Inf.fio = filo; A1 = A2 = 0; height = 1; }
+
+};
+//---------------------------------------------------------------------------
+unsigned char height(TTree* p)
+{
+	return p?p->height:0;
+}
+int bfactor(TTree* p)
+{
+	return height(p->A2)-height(p->A1);
+}
+
+void fixheight(TTree* p)
+{
+	unsigned char hl = height(p->A1);
+	unsigned char hr = height(p->A2);
+	p->height = (hl>hr?hl:hr)+1;
+}
+//---------------------------------------------------------------------------
+TTree* rotateright(TTree* p) // правый поворот вокруг p
+{
+	TTree* q = p->A1;
+	p->A1 = q->A2;
+	q->A2 = p;
+	fixheight(p);
+	fixheight(q);
+	return q;
+}
+
+TTree* rotateleft(TTree* q) // левый поворот вокруг q
+{
+	TTree* p = q->A2;
+	q->A2 = p->A1;
+	p->A1 = q;
+	fixheight(q);
+	fixheight(p);
+	return p;
+}
+
+TTree* balance(TTree* p) // балансировка узла p
+{
+	fixheight(p);
+	if( bfactor(p)==2 )
+	{
+		if( bfactor(p->A2) < 0 )
+			p->A2 = rotateright(p->A2);
+		return rotateleft(p);
+	}
+	if( bfactor(p)==-2 )
+	{
+		if( bfactor(p->A1) > 0  )
+			p->A1 = rotateleft(p->A1);
+		return rotateright(p);
+	}
+	return p; // балансировка не нужна
+}
+
+//---------------------------------------------------------------------------
+TTree* insert(TTree* p, TInf infa ) // вставка ключа k в дерево с корнем p
+{
+	if( !p ) return new TTree(infa.key,infa.fio);
+	if( infa.key < p->Inf.key )
+		p->A1 = insert(p->A1,infa);
+	else
+		p->A2 = insert(p->A2,infa);
+	return balance(p);
+}
+//---------------------------------------------------------------------------
+
+// поиск узла с минимальным ключом в дереве p
+ TTree* findmin(TTree* p)
+{
+	return p->A1?findmin(p->A1):p;
+}
+
+// удаление узла с минимальным ключом из дерева p
+TTree* removemin(TTree* p)
+{
+	if( p->A1==0 )
+		return p->A2;
+	p->A1 = removemin(p->A1);
+	return balance(p);
+}
+
+// удаление ключа k из дерева p
+TTree* Delete_Node_BinaryTree(TTree* p, int k)
+{
+	if( !p ) return 0;
+	if( k < p->Inf.key )
+		p->A1 = Delete_Node_BinaryTree(p->A1,k);
+	else if( k > p->Inf.key )
+		p->A2 = Delete_Node_BinaryTree(p->A2,k);
+	else //  k == p->key
+	{
+		TTree* q = p->A1;
+		TTree* r = p->A2;
+		delete p;
+		if( !r ) return q;
+		TTree* min = findmin(r);
+		min->A2 = removemin(r);
+		min->A1 = q;
+		return balance(min);
+	}
+	return balance(p);
+}
+
+// Полное удаление дерева
+void DeleteTree(TTree *p)
+
+{
+
+if (p == NULL)return;
+
+DeleteTree(p->A1);
+
+DeleteTree(p->A2);
+
+delete(p);
+
+p=NULL;
+
+}
+
+
+#endif

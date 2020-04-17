@@ -1,0 +1,73 @@
+//---------------------------------------------------------------------------
+
+#ifndef TreeH
+#define TreeH
+
+template <typename T>
+class Node
+{
+public:
+	Node* left;
+	Node* right;
+	T data;
+	int key;
+	Node(T data = T(), int key = int(), Node* left = nullptr, Node* right = nullptr)
+	{
+		this->data=data;
+		this->key=key;
+		this->left=left;
+		this->right=right;
+	}
+};
+
+template <typename T>
+class Tree
+{
+	public:
+		Tree();
+		~Tree();
+		void Add(T, int);
+	private:
+		Node<T>* root;
+};
+
+template <typename T>
+Tree<T>::Tree()
+{
+	root=nullptr;
+}
+
+template <typename T>
+void Tree<T>::Add(T data, int key)
+{
+	if(root==nullptr)
+	{
+		root=new Node<T>(data, key);
+	}
+	else
+	{
+		Node<T>* current = this->root;
+		while(current->left!=nullptr ||current->right!=nullptr)
+		{
+			if(key < current->key)
+			{
+				current = current->left;
+			}
+			else
+			{
+				current = current->right;
+			}
+			////////////////////////////////////////////////////////////////////
+			if(key < current->key)
+			{
+				current->left = new Node<T>(data, key);
+			}
+			else
+			{
+				current->right = new Node<T>(data, key);
+			}
+		}
+	}
+}
+
+#endif

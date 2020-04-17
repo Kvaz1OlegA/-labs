@@ -1,0 +1,242 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "Tree.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+
+Tree *tree;
+
+int choose;
+int n = 9;
+// Доступ к удалению строки в стринггрид
+class TExtStringGrid: public  TStringGrid
+{
+    public:
+        using TStringGrid::DeleteRow;
+};
+
+void ViewTree(Tree *p, int kl)
+
+{
+	if (p == NULL) return;
+	if (kl == -1)
+		Form1->TreeView1->Items->AddFirst(NULL,p->info.fio+"= "+IntToStr(p->info.key));
+	else
+		Form1->TreeView1->Items->AddChildFirst(Form1->
+	TreeView1->Items->Item[kl], p->info.fio+" = "+IntToStr(p->info.key));
+	kl++;
+	ViewTree(p->left,kl);
+	ViewTree(p->right,kl);
+	kl--;
+}
+
+void Search(Tree *p, int index)
+{
+if (p == NULL) return;
+
+	if (p->info.key == index) {
+		Form1->Memo1->Lines->Add(p->info.fio);
+	}
+	if (p->info.key > index) {
+		Search(p->left,index);
+	}
+	if (p->info.key < index ) {
+		Search(p->right,index);
+	}
+}
+  // Обход 1
+void WrtTree(Tree*p) {
+
+if (p == NULL)return;
+
+Form1->Memo1->Lines->Add(p->info.fio+" "+p->info.key);
+
+WrtTree(p->left);
+
+WrtTree(p->right);
+
+}
+  // Обход 2
+void WrtTreeB(Tree*p) {
+
+if (p == NULL)return;
+
+WrtTreeB(p->left);
+
+Form1->Memo1->Lines->Add(p->info.fio+" "+p->info.key);
+
+
+WrtTreeB(p->right);
+
+}
+  // Обход 3
+void WrtTreeP(Tree*p) {
+
+ if (p == NULL)return;
+WrtTreeP(p->left);
+
+WrtTreeP(p->right);
+
+Form1->Memo1->Lines->Add(p->info.fio+" "+p->info.key);
+
+}
+
+  // Задание
+void Task(Tree*p) {
+
+	if (p == NULL)return;
+
+	Task(p->left);
+	Task(p->right);
+
+	if(p->left!=nullptr && p->right!=nullptr)
+	{
+		Form1->Memo1->Lines->Add(p->info.fio+" "+p->info.key);
+	}
+
+}
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+	StringGrid1->FixedCols=0;
+	StringGrid1->ColCount=2;
+	StringGrid1->RowCount=10;
+	StringGrid1->Cells[0][0] = "Data";
+	StringGrid1->Cells[1][0]="Key";
+	StringGrid1->Cells[0][1]="1st"; StringGrid1->Cells[1][1]="1";
+	StringGrid1->Cells[0][2]="2nd"; StringGrid1->Cells[1][2]="2";
+	StringGrid1->Cells[0][3]="3rd"; StringGrid1->Cells[1][3]="3";
+	StringGrid1->Cells[0][4]="4th"; StringGrid1->Cells[1][4]="4";
+	StringGrid1->Cells[0][5]="5th"; StringGrid1->Cells[1][5]="5";
+	StringGrid1->Cells[0][6]="6th"; StringGrid1->Cells[1][6]="6";
+	StringGrid1->Cells[0][7]="7th"; StringGrid1->Cells[1][7]="7";
+	StringGrid1->Cells[0][8]="8th"; StringGrid1->Cells[1][8]="8";
+	StringGrid1->Cells[0][9]="9th"; StringGrid1->Cells[1][9]="9";
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	Info A;
+	for (int i = 1; i <= n; i++)
+	{
+
+		A.fio = StringGrid1->Cells[0][i];
+
+		A.key = StrToInt(StringGrid1->Cells[1][i]);
+		tree = insert(tree,A);
+	}
+
+	int kl=-1;
+	TreeView1->Items->Clear();
+	ViewTree(tree,kl);
+	TreeView1->FullExpand();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	tree = Delete_Node_BinaryTree(tree,StrToInt(Edit1->Text));
+
+	int kl=-1;
+
+	TreeView1->Items->Clear();
+
+	ViewTree(tree,kl);
+
+	TreeView1->FullExpand();
+
+	for (int i = 0; i < n; i++) {
+		if (StrToInt(Edit1->Text) == StringGrid1->Cells[1][i+1]) {
+		  ((TExtStringGrid*)StringGrid1)->DeleteRow(i+1);
+		  n--;
+		}
+	}
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	Info A;
+	A.fio = Edit2->Text;
+
+	A.key = StrToInt(Edit3->Text);
+	tree = insert(tree,A);
+	n++;
+
+	StringGrid1->RowCount = n+1;
+	StringGrid1->Cells[0][n] = A.fio;
+	StringGrid1->Cells[1][n] = A.key;
+	int kl=-1;
+	TreeView1->Items->Clear();
+	ViewTree(tree,kl);
+	TreeView1->FullExpand();
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+	Memo1->Clear();
+
+    Search(tree, StrToInt(Edit1->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton1Click(TObject *Sender)
+{
+    choose = 1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton2Click(TObject *Sender)
+{
+    choose = 2;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton3Click(TObject *Sender)
+{
+    choose = 3;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+	Memo1->Clear();
+	switch(choose)
+	{
+		case 1:
+			WrtTree(tree);
+			break;
+		case 2:
+			WrtTreeB(tree);
+			break;
+		case 3:
+			WrtTreeP(tree);
+			break;
+    }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+    Memo1->Clear();
+	Task(tree);
+}
+//---------------------------------------------------------------------------
+

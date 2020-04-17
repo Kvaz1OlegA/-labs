@@ -1,0 +1,79 @@
+//---------------------------------------------------------------------------
+
+#ifndef HashChainH
+#define HashChainH
+#include "Stack.h"
+
+template <typename T>
+class HashChain {
+private:
+    int key;
+    Stack<T> *flow;
+	int Hash(int key);
+public:
+	HashChain(int num);
+	void Insert(int key, T data);
+	void Delete(int key);
+	void ShowInf(TMemo *memo, int key);
+	T GetInfo(int key);
+	int GetKey();
+	~HashChain();
+};
+
+template<typename T>
+HashChain<T>::HashChain(int num)
+{
+	key = num;
+	flow = new Stack<T>[num];
+}
+
+template<typename T>
+void HashChain<T>::Insert(int key, T data)
+{
+	flow[Hash(key)].PushFront(data, key);
+}
+
+template<typename T>
+void HashChain<T>::Delete(int key)
+{
+	flow[Hash(key)].PopFront();
+}
+
+template<typename T>
+T HashChain<T>::GetInfo(int key)
+{
+	return flow[Hash(key)].GetData(key);
+}
+
+template<typename T>
+int HashChain<T>::GetKey()
+{
+	return key;
+}
+
+template<typename T>
+int HashChain<T>::Hash(int key)
+{
+	return key%this->key;
+}
+
+
+template<typename T>
+void HashChain<T>::ShowInf(TMemo *memo, int key)
+{
+    flow[Hash(key)].Show(memo);
+}
+
+template<typename T>
+HashChain<T>::~HashChain()
+{
+	for (int i = 0; i < key; i++)
+	{
+		while (flow[i].GetSize() != 0)
+		{
+			flow[i].PopFront();
+		}
+	}
+}
+
+#endif
