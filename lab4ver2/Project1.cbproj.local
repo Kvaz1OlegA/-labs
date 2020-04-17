@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2020.04.17 12:27:59.674,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2020.04.17 12:27:59.870,=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2020.04.17 12:29:43.867,E:\university\progs\C++\2 sem\lab4ver2\Unit1.h=C:\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>2020.04.17 12:29:43.867,E:\university\progs\C++\2 sem\lab4ver2\Unit1.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2020.04.17 12:29:43.867,E:\university\progs\C++\2 sem\lab4ver2\Unit1.dfm=C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2020.04.17 12:29:45.425,E:\university\progs\C++\2 sem\lab4ver2\Project1PCH1.h=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2020.04.17 12:29:47.109,E:\university\progs\C++\2 sem\lab4ver2\Project1.cbproj=C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>2020.04.17 12:30:29.758,=E:\university\progs\C++\2 sem\lab4ver2\Unit2.cpp</Transaction>
-    <Transaction>2020.04.17 12:31:23.087,E:\university\progs\C++\2 sem\lab4ver2\Stack.h=E:\university\progs\C++\2 sem\lab4ver2\Unit2.h</Transaction>
-    <Transaction>2020.04.17 12:31:23.087,E:\university\progs\C++\2 sem\lab4ver2\Stack.cpp=E:\university\progs\C++\2 sem\lab4ver2\Unit2.cpp</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.674,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.425,C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=E:\university\progs\C++\2 sem\lab4ver2\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.087,E:\university\progs\C++\2 sem\lab4ver2\Unit2.h=E:\university\progs\C++\2 sem\lab4ver2\Stack.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.109,C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj=E:\university\progs\C++\2 sem\lab4ver2\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,C:\Documents\Embarcadero\Studio\Projects\Unit1.h=E:\university\progs\C++\2 sem\lab4ver2\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\university\progs\C++\2 sem\lab4ver2\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.870,=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp=E:\university\progs\C++\2 sem\lab4ver2\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.758,=E:\university\progs\C++\2 sem\lab4ver2\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.087,E:\university\progs\C++\2 sem\lab4ver2\Unit2.cpp=E:\university\progs\C++\2 sem\lab4ver2\Stack.cpp</Transaction>
   </Transactions>
 </BorlandProject>
