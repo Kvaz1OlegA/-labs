@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.257,=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.983,C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp=C:\Documents\Embarcadero\Studio\Projects\TaskClass.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.265,C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp=C:\Documents\Embarcadero\Studio\Projects\Stack.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.169,=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.582,E:\university\progs\C++\2 sem\lab7\Project1.cbproj=C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.137,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.300,E:\university\progs\C++\2 sem\lab7\Unit1.dfm=C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.783,C:\Documents\Embarcadero\Studio\Projects\HashChain.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.397,E:\university\progs\C++\2 sem\lab7\HashChain.h=C:\Documents\Embarcadero\Studio\Projects\HashChain.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.300,E:\university\progs\C++\2 sem\lab7\Unit1.h=C:\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.265,C:\Documents\Embarcadero\Studio\Projects\Stack.h=C:\Documents\Embarcadero\Studio\Projects\Unit2.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.265,C:\Documents\Embarcadero\Studio\Projects\Stack.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.783,C:\Documents\Embarcadero\Studio\Projects\HashChain.h=C:\Documents\Embarcadero\Studio\Projects\Unit3.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.983,C:\Documents\Embarcadero\Studio\Projects\TaskClass.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,=C:\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.537,C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=E:\university\progs\C++\2 sem\lab7\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.983,C:\Documents\Embarcadero\Studio\Projects\Unit2.h=C:\Documents\Embarcadero\Studio\Projects\TaskClass.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.265,C:\Documents\Embarcadero\Studio\Projects\Unit2.h=C:\Documents\Embarcadero\Studio\Projects\Stack.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.397,C:\Documents\Embarcadero\Studio\Projects\HashChain.cpp=E:\university\progs\C++\2 sem\lab7\HashChain.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.442,C:\Documents\Embarcadero\Studio\Projects\Stack.cpp=E:\university\progs\C++\2 sem\lab7\Stack.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.442,C:\Documents\Embarcadero\Studio\Projects\Stack.h=E:\university\progs\C++\2 sem\lab7\Stack.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.300,C:\Documents\Embarcadero\Studio\Projects\Unit1.h=E:\university\progs\C++\2 sem\lab7\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.582,C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj=E:\university\progs\C++\2 sem\lab7\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.300,C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp=E:\university\progs\C++\2 sem\lab7\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.579,=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.442,E:\university\progs\C++\2 sem\lab7\Stack.cpp=C:\Documents\Embarcadero\Studio\Projects\Stack.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.300,E:\university\progs\C++\2 sem\lab7\Unit1.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.983,C:\Documents\Embarcadero\Studio\Projects\TaskClass.h=C:\Documents\Embarcadero\Studio\Projects\Unit2.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.442,E:\university\progs\C++\2 sem\lab7\Stack.h=C:\Documents\Embarcadero\Studio\Projects\Stack.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.397,E:\university\progs\C++\2 sem\lab7\HashChain.cpp=C:\Documents\Embarcadero\Studio\Projects\HashChain.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.397,C:\Documents\Embarcadero\Studio\Projects\HashChain.h=E:\university\progs\C++\2 sem\lab7\HashChain.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.137,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.300,C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\university\progs\C++\2 sem\lab7\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.072,=C:\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.537,E:\university\progs\C++\2 sem\lab7\Project1PCH1.h=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.783,C:\Documents\Embarcadero\Studio\Projects\Unit3.cpp=C:\Documents\Embarcadero\Studio\Projects\HashChain.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.783,C:\Documents\Embarcadero\Studio\Projects\Unit3.h=C:\Documents\Embarcadero\Studio\Projects\HashChain.h</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Project1.cpp"/>

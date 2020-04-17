@@ -33,6 +33,11 @@ HashChain<T>::HashChain(int num)
 template<typename T>
 void HashChain<T>::Insert(int key, T data)
 {
+	for(int i=0; i<flow[Hash(key)].GetSize(); i++)
+	{
+		if(key==flow[Hash(key)].GetKey(i))
+            return;
+    }
 	flow[Hash(key)].PushFront(data, key);
 }
 
