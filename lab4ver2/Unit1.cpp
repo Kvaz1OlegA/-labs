@@ -88,8 +88,25 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 		operations.PopFront();
 	}
 	Edit7->Text = temp.c_str();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
 	float result;
-    for (int i = 0; i < temp.size(); i++)
+	try
+	{
+		if(Edit2->Text==""||Edit3->Text==""||Edit4->Text==""||Edit5->Text==""||Edit6->Text=="")
+			throw Exception("Empty fields");
+		if(!Check(Edit2->Text)||!Check(Edit3->Text)||!Check(Edit4->Text)||!Check(Edit5->Text)||!Check(Edit6->Text))
+		{
+			throw Exception("Invalid numbers");
+		}
+	}
+	catch(Exception *ex)
+	{
+		ShowMessage(ex->Message);
+	}
+	for (int i = 0; i < temp.size(); i++)
 	{
 		if (temp[i] >= 'a' && temp[i] <= 'e')
 		{
@@ -147,3 +164,4 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 	temp="";
 }
 //---------------------------------------------------------------------------
+

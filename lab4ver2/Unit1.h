@@ -28,10 +28,23 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 	TLabel *Label7;
 	TLabel *Label8;
+	TButton *Button2;
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
+    bool Check(AnsiString num)
+	{
+		for(int i=1; i<=num.Length(); i++)
+		{
+			if((num[i]<'0' || num[i]>'9')&&(num[i]!=','))
+			{
+				return 0;
+			}
+		}
+		return 1;
+	}
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
