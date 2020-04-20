@@ -5,16 +5,16 @@
 
 using namespace std;
 
-class Info {
-public:
+struct Info {
+
 int key;
 
 String data;
 
 };
 //---------------------------------------------------------------------------
-class Tree {
-public:
+struct Tree {
+
 Info info;
 
 unsigned char height;
@@ -46,7 +46,7 @@ void Fix(Tree* p)
 	p->height = (hl>hr?hl:hr)+1;
 }
 //---------------------------------------------------------------------------
-Tree* RotateRight(Tree* p)
+Tree* RotateRight(Tree* p) // правый поворот вокруг p
 {
 	Tree* q = p->left;
 	p->left = q->right;
@@ -56,7 +56,7 @@ Tree* RotateRight(Tree* p)
 	return q;
 }
 
-Tree* RotateLeft(Tree* q)
+Tree* RotateLeft(Tree* q) // левый поворот вокруг q
 {
 	Tree* p = q->right;
 	q->right = p->left;
@@ -66,7 +66,7 @@ Tree* RotateLeft(Tree* q)
 	return p;
 }
 
-Tree* Balance(Tree* p)
+Tree* Balance(Tree* p) // балансировка узла p
 {
 	Fix(p);
 	if( BalanceFactor(p)==2 )
@@ -81,11 +81,11 @@ Tree* Balance(Tree* p)
 			p->left = RotateLeft(p->left);
 		return RotateRight(p);
 	}
-	return p;
+	return p; // балансировка не нужна
 }
 
 //---------------------------------------------------------------------------
-Tree* Add(Tree* p, Info infa )
+Tree* Add(Tree* p, Info infa ) // вставка ключа k в дерево с корнем p
 {
 	if( !p ) return new Tree(infa.key,infa.data);
 	if( infa.key < p->info.key )
@@ -96,11 +96,13 @@ Tree* Add(Tree* p, Info infa )
 }
 //---------------------------------------------------------------------------
 
+// поиск узла с минимальным ключом в дереве p
  Tree* FindMin(Tree* p)
 {
 	return p->left?FindMin(p->left):p;
 }
 
+// удаление узла с минимальным ключом из дерева p
 Tree* RemoveMin(Tree* p)
 {
 	if( p->left==0 )
@@ -109,6 +111,7 @@ Tree* RemoveMin(Tree* p)
 	return Balance(p);
 }
 
+// удаление ключа k из дерева p
 Tree* Delete(Tree* p, int k)
 {
 	if( !p ) return 0;
@@ -116,6 +119,7 @@ Tree* Delete(Tree* p, int k)
 		p->left = Delete(p->left,k);
 	else if( k > p->info.key )
 		p->right = Delete(p->right,k);
+	else //  k == p->key
 	{
 		Tree* q = p->left;
 		Tree* r = p->right;
@@ -127,5 +131,13 @@ Tree* Delete(Tree* p, int k)
 		return Balance(min);
 	}
 	return Balance(p);
+}
+
+void DeleteTree(TTree *p)
+{
+	if (p == NULL)return;
+	DeleteTree(p->A1);
+	DeleteTree(p->A2);
+	delete(p);p=NULL;
 }
 #endif
