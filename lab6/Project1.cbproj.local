@@ -1,15 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.880,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.424,E:\university\progs\C++\2 sem\lab6\Tree.cpp=E:\university\progs\C++\2 sem\lab6\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.424,E:\university\progs\C++\2 sem\lab6\Tree.h=E:\university\progs\C++\2 sem\lab6\Unit2.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.229,C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj=E:\university\progs\C++\2 sem\lab6\Project1.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.974,C:\Documents\Embarcadero\Studio\Projects\Unit1.h=E:\university\progs\C++\2 sem\lab6\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.974,C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\university\progs\C++\2 sem\lab6\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.974,C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp=E:\university\progs\C++\2 sem\lab6\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.445,=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.974,E:\university\progs\C++\2 sem\lab6\Unit1.cpp=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.974,E:\university\progs\C++\2 sem\lab6\Unit1.dfm=C:\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.974,E:\university\progs\C++\2 sem\lab6\Unit1.h=C:\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.229,E:\university\progs\C++\2 sem\lab6\Project1.cbproj=C:\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.890,E:\university\progs\C++\2 sem\lab6\Project1PCH1.h=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.424,E:\university\progs\C++\2 sem\lab6\Unit2.cpp=E:\university\progs\C++\2 sem\lab6\Tree.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.804,=E:\university\progs\C++\2 sem\lab6\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.890,C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=E:\university\progs\C++\2 sem\lab6\Project1PCH1.h</Transaction>
-  </Transactions>
+    <Transaction>1899.12.30 00:00:00.000.445,=C:\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.880,=C:\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.424,E:\university\progs\C++\2 sem\lab6\Unit2.h=E:\university\progs\C++\2 sem\lab6\Tree.h</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Project1.cpp"/>
+    <File Path="Project1PCH1.h"/>
+    <File Path="Tree.cpp"/>
+    <File Path="Tree.cpp"/>
+    <File Path="Tree.h"/>
+    <File Path="Unit1.cpp"/>
+    <File Path="Unit1.cpp"/>
+    <File Path="Unit1.dfm"/>
+    <File Path="Unit1.h"/>
+  </ProjectSortOrder>
 </BorlandProject>

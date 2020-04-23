@@ -1,0 +1,131 @@
+//---------------------------------------------------------------------------
+
+#ifndef TreeH
+#define TreeH
+
+using namespace std;
+
+class Info {
+public:
+int key;
+
+String data;
+
+};
+//---------------------------------------------------------------------------
+class Tree {
+public:
+Info info;
+
+unsigned char height;
+
+Tree *left;
+
+Tree *right;
+
+Tree(int k, String filo)
+{
+	info.key = k; info.data = filo; left = right = 0; height = 1;
+}
+
+};
+//---------------------------------------------------------------------------
+unsigned char Height(Tree* p)
+{
+	return p?p->height:0;
+}
+int BalanceFactor(Tree* p)
+{
+	return Height(p->right)-Height(p->left);
+}
+
+void Fix(Tree* p)
+{
+	unsigned char hl = Height(p->left);
+	unsigned char hr = Height(p->right);
+	p->height = (hl>hr?hl:hr)+1;
+}
+//---------------------------------------------------------------------------
+Tree* RotateRight(Tree* p)
+{
+	Tree* q = p->left;
+	p->left = q->right;
+	q->right = p;
+	Fix(p);
+	Fix(q);
+	return q;
+}
+
+Tree* RotateLeft(Tree* q)
+{
+	Tree* p = q->right;
+	q->right = p->left;
+	p->left = q;
+	Fix(q);
+	Fix(p);
+	return p;
+}
+
+Tree* Balance(Tree* p)
+{
+	Fix(p);
+	if( BalanceFactor(p)==2 )
+	{
+		if( BalanceFactor(p->right) < 0 )
+			p->right = RotateRight(p->right);
+		return RotateLeft(p);
+	}
+	if( BalanceFactor(p)==-2 )
+	{
+		if( BalanceFactor(p->left) > 0  )
+			p->left = RotateLeft(p->left);
+		return RotateRight(p);
+	}
+	return p;
+}
+
+//---------------------------------------------------------------------------
+Tree* Add(Tree* p, Info infa )
+{
+	if( !p ) return new Tree(infa.key,infa.data);
+	if( infa.key < p->info.key )
+		p->left = Add(p->left,infa);
+	else
+		p->right = Add(p->right,infa);
+	return Balance(p);
+}
+//---------------------------------------------------------------------------
+
+ Tree* FindMin(Tree* p)
+{
+	return p->left?FindMin(p->left):p;
+}
+
+Tree* RemoveMin(Tree* p)
+{
+	if( p->left==0 )
+		return p->right;
+	p->left = RemoveMin(p->left);
+	return Balance(p);
+}
+
+Tree* Delete(Tree* p, int k)
+{
+	if( !p ) return 0;
+	if( k < p->info.key )
+		p->left = Delete(p->left,k);
+	else if( k > p->info.key )
+		p->right = Delete(p->right,k);
+	{
+		Tree* q = p->left;
+		Tree* r = p->right;
+		delete p;
+		if( !r ) return q;
+		Tree* min = FindMin(r);
+		min->right = RemoveMin(r);
+		min->left = q;
+		return Balance(min);
+	}
+	return Balance(p);
+}
+#endif
