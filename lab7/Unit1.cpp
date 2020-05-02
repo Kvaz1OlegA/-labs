@@ -18,7 +18,16 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button5Click(TObject *Sender)
 {
-    Memo1->Lines->Clear();
+	try
+	{
+		if(Edit4->Text=="")
+			throw Exception("Invalid key");
+	}
+	catch(Exception *ex)
+	{
+		ShowMessage(ex->Message);
+	}
+	Memo1->Lines->Clear();
 	hash=new HashChain<int>(StrToInt(Edit4->Text));
 	for(int i=0; i<hash->GetKey(); i++)
 	{
@@ -39,6 +48,15 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
+	try
+	{
+		if(StrToInt(Edit3->Text)>hash->GetKey() || Edit3->Text =="")
+			throw Exception("Invalid key");
+	}
+	catch(Exception *ex)
+	{
+		ShowMessage(ex->Message);
+	}
 	hash->Delete(StrToInt(Edit3->Text));
 	Memo1->Lines->Clear();
 	for(int i=0; i<hash->GetKey(); i++)
@@ -56,6 +74,15 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button6Click(TObject *Sender)
 {
+	try
+	{
+		if(Edit4->Text=="" || Edit6->Text =="")
+			throw Exception("Invalid key");
+	}
+	catch(Exception *ex)
+	{
+		ShowMessage(ex->Message);
+	}
 	Memo1->Lines->Clear();
 	hash=new HashChain<int>(StrToInt(Edit4->Text));
 	for(int i=0; i<hash->GetKey(); i++)

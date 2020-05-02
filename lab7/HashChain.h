@@ -44,7 +44,7 @@ void HashChain<T>::Insert(int key, T data)
 template<typename T>
 void HashChain<T>::Delete(int key)
 {
-	flow[Hash(key)].PopFront();
+	flow[key].PopFront();
 }
 
 template<typename T>
