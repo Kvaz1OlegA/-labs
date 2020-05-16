@@ -26,7 +26,9 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
+	temp="";
 	AnsiString exeption = Edit1->Text;
+	Edit7->Text="";
 	for (int i = 1; i <= exeption.Length(); i++)
 	{
 		if (exeption[i] >= 'a' && exeption[i] <= 'e')
@@ -97,10 +99,6 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 	{
 		if(Edit2->Text==""||Edit3->Text==""||Edit4->Text==""||Edit5->Text==""||Edit6->Text=="")
 			throw Exception("Empty fields");
-		if(!Check(Edit2->Text)||!Check(Edit3->Text)||!Check(Edit4->Text)||!Check(Edit5->Text)||!Check(Edit6->Text))
-		{
-			throw Exception("Invalid numbers");
-		}
 	}
 	catch(Exception *ex)
 	{

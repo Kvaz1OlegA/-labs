@@ -34,17 +34,6 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
-    bool Check(AnsiString num)
-	{
-		for(int i=1; i<=num.Length(); i++)
-		{
-			if((num[i]<'0' || num[i]>'9')&&(num[i]!=','))
-			{
-				return 0;
-			}
-		}
-		return 1;
-	}
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;

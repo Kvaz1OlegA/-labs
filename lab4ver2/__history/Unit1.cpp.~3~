@@ -1,0 +1,167 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include <string>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+#include "Stack.h"
+TForm1 *Form1;
+
+Stack <float> nums;
+
+Stack <char> operations;
+
+using namespace std;
+
+string temp;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	AnsiString exeption = Edit1->Text;
+	for (int i = 1; i <= exeption.Length(); i++)
+	{
+		if (exeption[i] >= 'a' && exeption[i] <= 'e')
+		{
+			temp.push_back(exeption[i]);
+		}
+		else
+		{
+			if (exeption[i] == ')')
+			{
+				while (operations[0]!='(')
+				{
+					temp.push_back(operations[0]);
+					operations.PopFront();
+				}
+				operations.PopFront();
+			}
+			else if (exeption[i] == '+' || exeption[i] == '-')
+			{
+				if (operations[0] == '(')
+				{
+					operations.PushFront(exeption[i]);
+				}
+				else
+				{
+					while (operations.GetSize()!=0 && operations[0] != '(')
+					{
+						temp.push_back(operations[0]);
+						operations.PopFront();
+					}
+					operations.PushFront(exeption[i]);
+				}
+			}
+			else if (exeption[i] == '/' || exeption[i] == '*')
+			{
+				if (operations[0] == '(' || operations[0] == '+' || operations[0] == '-')
+				{
+					operations.PushFront(exeption[i]);
+				}
+				else
+				{
+					while (operations.GetSize() != 0 && operations[0] != '(')
+					{
+						temp.push_back(operations[0]);
+						operations.PopFront();
+					}
+					operations.PushFront(exeption[i]);
+				}
+			}
+			else
+			{
+				operations.PushFront(exeption[i]);
+			}
+		}
+	}
+	while (operations.GetSize()!= 0)
+	{
+		temp.push_back(operations[0]);
+		operations.PopFront();
+	}
+	Edit7->Text = temp.c_str();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	float result;
+	try
+	{
+		if(Edit2->Text==""||Edit3->Text==""||Edit4->Text==""||Edit5->Text==""||Edit6->Text=="")
+			throw Exception("Empty fields");
+		if(!Check(Edit2->Text)||!Check(Edit3->Text)||!Check(Edit4->Text)||!Check(Edit5->Text)||!Check(Edit6->Text))
+		{
+			throw Exception("Invalid numbers");
+		}
+	}
+	catch(Exception *ex)
+	{
+		ShowMessage(ex->Message);
+	}
+	for (int i = 0; i < temp.size(); i++)
+	{
+		if (temp[i] >= 'a' && temp[i] <= 'e')
+		{
+			switch(temp[i])
+			{
+				case 'a':
+				nums.PushFront(StrToFloat(Edit2->Text));
+				break;
+				case 'b':
+				nums.PushFront(StrToFloat(Edit3->Text));
+				break;
+				case 'c':
+				nums.PushFront(StrToFloat(Edit4->Text));
+				break;
+				case 'd':
+				nums.PushFront(StrToFloat(Edit5->Text));
+				break;
+				case 'e':
+				nums.PushFront(StrToFloat(Edit6->Text));
+				break;
+			}
+		}
+		else
+		{
+			switch (temp[i])
+			{
+			case '+':
+				result = nums[1] + nums[0];
+				nums.PopFront();
+				nums.PopFront();
+				nums.PushFront(result);
+				break;
+			case '-':
+				result = nums[1] - nums[0];
+				nums.PopFront();
+				nums.PopFront();
+				nums.PushFront(result);
+				break;
+			case '*':
+				result = nums[1] * nums[0];
+				nums.PopFront();
+				nums.PopFront();
+				nums.PushFront(result);
+				break;
+			case '/':
+				result = nums[1] / nums[0];
+				nums.PopFront();
+				nums.PopFront();
+				nums.PushFront(result);
+				break;
+			}
+		}
+	}
+	Edit8->Text = FloatToStr(nums[0]);
+	temp="";
+}
+//---------------------------------------------------------------------------
+

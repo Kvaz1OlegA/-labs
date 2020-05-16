@@ -75,7 +75,6 @@ object Form1: TForm1
     Width = 374
     Height = 24
     TabOrder = 0
-    Text = 'Edit1'
   end
   object Edit2: TEdit
     Left = 8
@@ -83,7 +82,6 @@ object Form1: TForm1
     Width = 73
     Height = 24
     TabOrder = 1
-    Text = 'Edit2'
   end
   object Edit3: TEdit
     Left = 87
@@ -91,7 +89,6 @@ object Form1: TForm1
     Width = 58
     Height = 24
     TabOrder = 2
-    Text = 'Edit3'
   end
   object Edit4: TEdit
     Left = 151
@@ -99,7 +96,6 @@ object Form1: TForm1
     Width = 73
     Height = 24
     TabOrder = 3
-    Text = 'Edit4'
   end
   object Edit5: TEdit
     Left = 230
@@ -107,7 +103,6 @@ object Form1: TForm1
     Width = 73
     Height = 24
     TabOrder = 4
-    Text = 'Edit5'
   end
   object Edit6: TEdit
     Left = 309
@@ -115,7 +110,6 @@ object Form1: TForm1
     Width = 73
     Height = 24
     TabOrder = 5
-    Text = 'Edit6'
   end
   object Edit7: TEdit
     Left = 8
@@ -123,7 +117,6 @@ object Form1: TForm1
     Width = 182
     Height = 24
     TabOrder = 6
-    Text = 'Edit7'
   end
   object Edit8: TEdit
     Left = 200
@@ -131,7 +124,6 @@ object Form1: TForm1
     Width = 182
     Height = 24
     TabOrder = 7
-    Text = 'Edit8'
   end
   object Button1: TButton
     Left = 408
